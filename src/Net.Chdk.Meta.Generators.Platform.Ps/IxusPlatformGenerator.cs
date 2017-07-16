@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace Net.Chdk.Meta.Generators.Platform.Ps
 {
-    sealed class IxusPlatformGenerator : InnerPlatformGeneratorBase, IIxusPlatformGenerator
+    sealed class IxusPlatformGenerator : InnerPlatformGenerator, IIxusPlatformGenerator
     {
         protected override IEnumerable<string> PreGenerate(string source)
         {

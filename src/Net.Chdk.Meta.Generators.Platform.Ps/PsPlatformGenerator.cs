@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace Net.Chdk.Meta.Generators.Platform.Ps
 {
-    sealed class PsPlatformGenerator : InnerPlatformGeneratorBase
+    sealed class PsPlatformGenerator : InnerPlatformGenerator
     {
         protected override string Keyword => "PowerShot";
 
