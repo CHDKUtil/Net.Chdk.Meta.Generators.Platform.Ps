@@ -107,6 +107,18 @@ namespace Net.Chdk.Meta.Generators.Platform.Ps.Tests
         }
 
         [TestMethod]
+        public void TestPowershotG7X()
+        {
+            Test("g7x", "PowerShot G7 X");
+        }
+
+        [TestMethod]
+        public void TestPowershotG7XMarkII()
+        {
+            Test("g7x2", "PowerShot G7 X Mark II");
+        }
+
+        [TestMethod]
         public void TestElphIS()
         {
             Test("ixus140_elph130", "PowerShot ELPH 130 IS", "IXUS 140");
