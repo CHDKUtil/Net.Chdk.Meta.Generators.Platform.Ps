@@ -48,6 +48,9 @@ namespace Net.Chdk.Meta.Generators.Platform.Ps
                     .Skip(1);
             }
 
+            if (split[split.Length - 1].Equals("ELPH")) // Trim Digital ELPH
+                return split.Take(split.Length - 2).Skip(1);
+
             return split.Skip(1);
         }
 
