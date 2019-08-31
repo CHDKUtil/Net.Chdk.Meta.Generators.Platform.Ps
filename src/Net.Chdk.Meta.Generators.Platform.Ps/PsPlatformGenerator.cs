@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 
@@ -38,15 +37,7 @@ namespace Net.Chdk.Meta.Generators.Platform.Ps
             if (!Keyword.Equals(split[0]))
                 return null;
 
-            var index = Array.IndexOf(split, "Mark");
-            if (index > 0)
-            {
-                var m = RomanToInteger(split[index + 1]);
-                return split
-                    .Take(index)
-                    .Concat(new[] { m.ToString() })
-                    .Skip(1);
-            }
+            split = AdaptMark(split);
 
             if (split[split.Length - 1].Equals("ELPH")) // Trim Digital ELPH
                 return split.Take(split.Length - 2).Skip(1);
@@ -81,23 +72,6 @@ namespace Net.Chdk.Meta.Generators.Platform.Ps
             if (split.Count() >= 2 && split.Skip(1).First().StartsWith("Facebook"))
                 return new[] { "N_Facebook" };
             return split;
-        }
-
-        private static int RomanToInteger(string roman)
-        {
-            switch (roman)
-            {
-                case "I":
-                    return 1;
-                case "II":
-                    return 2;
-                case "III":
-                    return 3;
-                case "IV":
-                    return 4;
-                default:
-                    throw new InvalidOperationException();
-            }
         }
 
         private static int GetIndexOfDigit(string value)
