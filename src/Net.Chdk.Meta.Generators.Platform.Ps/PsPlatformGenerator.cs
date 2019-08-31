@@ -75,7 +75,7 @@ namespace Net.Chdk.Meta.Generators.Platform.Ps
 
         protected override IEnumerable<string> Process(IEnumerable<string> split)
         {
-            if (split.Count() >= 2 && split.Skip(1).First() == "Facebook")
+            if (split.Count() >= 2 && split.Skip(1).First().StartsWith("Facebook"))
                 return new[] { "N_Facebook" };
             return split;
         }
